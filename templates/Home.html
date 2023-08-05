@@ -1,0 +1,16 @@
+{% load get_obj from custom_tags %}
+
+
+
+<h1>Home Template</h1>
+{% get_obj data.TheWebsiteImages 1 "WebsiteImg" as image1 %}
+<h1>{{ image1 }}</h1>
+<img src="{{ image1.url }}" alt="Image" style="width: 300px; height: 200px;">
+{% get_obj data.TheWebsiteInfo 1 "StudentsNumber" as txt1 %}
+<h1>{{ txt1 }}</h1>
+
+{% for train in data.TheWebsiteTrainers %}    
+<h1>{{ train.Name }}</h1>
+{% endfor %}
+
+
